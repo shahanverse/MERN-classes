@@ -37,28 +37,58 @@
 // const person1 = new Person('alice',30)
 // person1.display()
 
+// class Person {
+//   constructor(name, age) {
+//     this.name = name;           //inheritence
+//     this.age = age;
+//   }
+
+//   display() {
+//     console.log(`Name: ${this.name} And age: ${this.age}`);
+//   }
+// }
+
+// class Student extends Person {
+//   constructor(name, age, grade) {
+//     super(name, age);
+//     this.grade = grade;
+//   }
+
+//   study() {
+//     console.log(`Name: ${this.name} and Age: ${this.age} Grade: ${this.grade}`);
+//   }
+// }
+
+// const student1 = new Student("Ann", 20, "B");
+// student1.display();
+// student1.study();
+
+// polymorphism
+
 class Person {
-  constructor(name, age) {
-    this.name = name;           //inheritence
-    this.age = age;
+  constructor(name) {
+    this.name = name;
   }
-
   display() {
-    console.log(`Name: ${this.name} And age: ${this.age}`);
+    console.log(`Hello, my name is ${this.name}.`);
   }
 }
-
 class Student extends Person {
-  constructor(name, age, grade) {
-    super(name, age);
-    this.grade = grade;
-  }
-
-  study() {
-    console.log(`Name: ${this.name} and Age: ${this.age} Grade: ${this.grade}`);
+  display() {
+    console.log(`my name is ${this.name}.`);
   }
 }
 
-const student1 = new Student("Ann", 20, "B");
-student1.display();
-student1.study();
+class Teacher extends Person {
+  display() {
+    console.log(`${this.name}.`);
+  }
+}
+
+const p1 = new Person("shahan");
+const s1 = new Student("jabin");
+const t1 = new Teacher("naja");
+
+p1.display()
+s1.display()
+t1.display()
