@@ -65,30 +65,60 @@
 
 // polymorphism
 
+// class Person {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   display() {
+//     console.log(`Hello, my name is ${this.name}.`);
+//   }
+// }
+// class Student extends Person {
+//   display() {
+//     console.log(`my name is ${this.name}.`);
+//   }
+// }
+
+// class Teacher extends Person {
+//   display() {
+//     console.log(`${this.name}.`);
+//   }
+// }
+
+// const p1 = new Person("shahan");
+// const s1 = new Student("jabin");
+// const t1 = new Teacher("naja");
+
+// p1.display()
+// s1.display()
+// t1.display()
+
+
+// encapsulation
 class Person {
-  constructor(name) {
-    this.name = name;
-  }
-  display() {
-    console.log(`Hello, my name is ${this.name}.`);
-  }
-}
-class Student extends Person {
-  display() {
-    console.log(`my name is ${this.name}.`);
+  constructor(name, age){
+    let _age = age
+    this.name = name
+
+    this.getAge = function () {
+      return _age; // read
+    }
+    this.setAge = function(newAge){
+      if(newAge > 0){
+        _age = newAge
+      }
+      else {
+        console.log('Invalid age')
+      }
+    }
   }
 }
 
-class Teacher extends Person {
-  display() {
-    console.log(`${this.name}.`);
-  }
-}
+const person1 = new Person ('shahan', 20 )
 
-const p1 = new Person("shahan");
-const s1 = new Student("jabin");
-const t1 = new Teacher("naja");
+console.log(person1.name ) // shahan
+console.log(person1.getAge()); //20
+person1.setAge(23);
+console.log(person1.getAge());
 
-p1.display()
-s1.display()
-t1.display()
+// person1.Age   //error 
