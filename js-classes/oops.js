@@ -118,7 +118,7 @@ const person1 = new Person ('shahan', 20 )
 
 console.log(person1.name ) // shahan
 console.log(person1.getAge()); //20
-person1.setAge(23);
+person1.setAge(19);
 console.log(person1.getAge());
 
 // person1.Age   //error 
