@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+  </head>
+  <body>
+    <h1>signup form</h1>
+
+    <form action="" id="form" onsubmit="return validateForm()">
+      Name: <input type="text" id="name" /> <br />
+      <br />
+      Email: <input type="text" id="email" /> <br />
+      <br />
+      password: <input type="text" id="password" /> <br />
+      <br />
+      <button>Submit</button>
+    </form>
+
+    <p id="error"></p>
+
+    <script>
+      function validateForm() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+        let error = document.getElementById("error");
+
+        error.innerHTML = " ";
+
+        if (name === "" || email === "" || password === "") {
+          error.innerHTML = "All fields are required";
+           return false;
+        }
+            if (!email.includes('@') || !email.includes(".")){
+              error.innerHTML = 'please Enter a valid email'
+              return false;
+            }
+
+            // let pattern = /[a-zA-Z0-9]/
+            if (password.length <6 ) {
+               error.innerHTML = 'password must be atleast 6 characters'
+               return false; 
+            }
+
+            alert("form submitted successfully")
+            return true;
+           
+      }
+    </script>
+  </body>
+</html>
