@@ -33,3 +33,18 @@
   // const skills = new Set([...frontend, ...backend])
 
   // console.log(skills)
+
+5.
+
+  // const classA = new Set(['shahan','jabin', 'naja'])
+  // const classB = new Set(['shayan','jabin', 'shahan'])
+
+  // const communName = new Set()
+
+  // for (let student of classA){
+  //   if (classB.has(student)){
+  //     communName.add(student)
+  //   }
+    
+  // }
+  // console.log(communName)
