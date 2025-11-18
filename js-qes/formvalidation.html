@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>formvalidation</title>
+</head>
+<body>
+
+  <h1>Sign Up Form</h1>
+  <form id="form" action="" onsubmit="return validation()" >
+    Name: <input type="text" id="name"> <br> <br>
+    Email: <input type="text" name="" id="email"><br> <br>
+    PH: <input type="text" id="phone"><br> <br>
+    Password: <input type="text" name="" id="password"><br> <br>
+    Confirm password: <input type="text" id="confirmpassword"><br> <br>
+    Gender: <input type="radio" name="Gender" value="male" id="" >Male
+            <input type="radio" name="Gender" value="female" id="">Female<br><br>
+    Country: <select name="" id="country">
+      <option value="">Select country</option>
+      <option value="usa">USA</option>
+      <option value="india">INDIA</option>
+      <option value="uk">UK</option>
+    </select>        <br> <br>
+
+    <label for="">
+      <input type="checkbox" id="terms"> Terms & Conditions
+    </label> <br><br>
+
+    <p id="error"> </p>
+
+    <button id="submit">Submit</button>
+
+
+
+  </form>
+
+  <script>
+
+    function validation(){
+      let name = document.getElementById('name').value.trim()
+      let email = document.getElementById('email').value.trim()
+      let phone = document.getElementById('phone').value.trim()
+      let password = document.getElementById('password').value
+      let confirmpassword = document.getElementById('confirmpassword').value
+      let gender = document.querySelector("input[name='Gender']:checked") 
+      let country = document.getElementById("country").value
+      let terms = document.getElementById("terms").checked
+
+      let error = document.getElementById('error')
+      error.innerHTML = " " ; 
+
+      if ( name === "" || name.length < 3 || !/[A-Za-z]+$/.test(name) ){
+        error.innerHTML = "Enter a valid full name (only letter, minimum 3 characters)"
+        return false
+      }
+      if ( email === "" || !email.includes('@') || !email.includes('.')) {
+        error.innerHTML = 'enter a valid email'
+        return false
+      }
+      if ( phone === "" || !/^[0-9]{10}$/.test(phone)) {
+        error.innerHTML = 'enter a valid 10 digit phone number'
+        return false
+      }
+      if (password.length < 6 ) {
+        error.innerHTML = 'password should have a minimum 6 or 8 characters'
+        return false
+      }
+      if (password !== confirmpassword) {
+        error.innerHTML = "password do not match"
+        return false
+      }
+      if( !gender ){
+        error.innerHTML = 'please select a gender'
+        return false
+      }
+      if(country === "") {
+        error.innerHTML = 'please select the country'
+        return false
+      }
+      if(!terms) {
+        error.innerHTML = 'You must agree to the terms and condition'
+        return false
+      }
+      alert('form submitted successfully');
+    return true 
+    }
+    
+  </script>
+  
+</body>
+</html>
