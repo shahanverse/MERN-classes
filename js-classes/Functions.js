@@ -6,3 +6,12 @@
 
 //call back function 
 
+function greet(name){
+  console.log("hello" + name )
+}
+
+function user(callback) {
+  callback('ann')
+}
+
+user(greet)
