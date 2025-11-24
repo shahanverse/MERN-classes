@@ -108,30 +108,31 @@
 
 //Answer
 
-function saveUser(user, callback) {
-  console.log("Registering user...");
+function saveUser(user, callback){
+
+  console.log('Registering User')
 
   setTimeout(() => {
-    console.log(`User Saved: { name: ${user.name}, email: ${user.email} }`);
-    callback(); 
+    console.log(`User saved { name:${user.name} email: ${user.email}}`)
+    callback()
   }, 2000);
 }
 
-function sendWelcomeEmail(email, callback) {
+function sendUserEmail(email,callback) {
   setTimeout(() => {
-    console.log(`Welcome email sent to: ${email}`);
-    callback();
+    console.log(`Welcome email sent to: ${email}`)
+    callback()
   }, 1000);
 }
 
+
+
 function registerUser() {
-  const user = { name: "shahan", email: "shahanverse@gmail.com" };
-
-  saveUser(user, () => {
-    sendWelcomeEmail(user.email, () => {
-      console.log("REGISTRATION COMPLETED");
-    });
-  });
+  const user = { name:'shahan', email:'shahanverse@gmail.com'}
+  saveUser(user , () => {
+    sendUserEmail(user.email, () => {
+      console.log('REGISTRATION COMPLETED')
+    })
+  })
 }
-
-registerUser();
+registerUser()
