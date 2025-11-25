@@ -9,7 +9,6 @@
 // console.log(sum(10,20,40,50));
 
 // const arr = [ 10,30, 50, 70, 90 ];
-
 // const [a,b,...num] = arr ;
 // console.log(a)
 // console.log(b);
@@ -21,6 +20,7 @@
 //   place: 'calicut',
 //   role: 'Admin'
 
+
 // }
 
 // const {name, ...details} = user
@@ -29,10 +29,10 @@
 // console.log(details)
 
 
-// //spread
+//spread
 
 // const arr1 = [2,3,4,5,6]
-// const arr2 = [... arr1]
+// const arr2 = [...arr1]
 
 // console.log(arr2)
 
@@ -43,15 +43,15 @@
 // const a3 = [...a1, ...a2]
 
 // console.log(a3);
+ 
 
+function add(...rest) {
+  return rest.reduce((sum, n) => sum + n, 0);
+}
 
-// function add(...rest) {
-//   return rest.reduce((sum, n) => sum + n, 0);
-// }
+const spread = [2, 3, 4, 5];
 
-// const spread = [2, 3, 4, 5];
-
-// console.log(add(...spread));
+console.log(add(...spread));
 
  
 
@@ -66,13 +66,13 @@
 
 
 
-//Synchronous operation
+//Synchronous operation (Tasks run one after another . Each task must finish completely before the next starts.)
 
 // console.log('First');
 // console.log('Second');
 // console.log('Third');
 
-//Asynchronous program
+//Asynchronous program (tasks can run without for each other. The program can start another task while the first is still running.)
 
 // console.log('loading');
 // setTimeout(() => {
@@ -108,31 +108,31 @@
 
 //Answer
 
-function saveUser(user, callback){
+// function saveUser(user, callback){
 
-  console.log('Registering User')
+//   console.log('Registering User')
 
-  setTimeout(() => {
-    console.log(`User saved { name:${user.name} email: ${user.email}}`)
-    callback()
-  }, 2000);
-}
+//   setTimeout(() => {
+//     console.log(`User saved { name:${user.name} email: ${user.email}}`)
+//     callback()
+//   }, 2000);
+// }
 
-function sendUserEmail(email,callback) {
-  setTimeout(() => {
-    console.log(`Welcome email sent to: ${email}`)
-    callback()
-  }, 1000);
-}
+// function sendUserEmail(email,callback) {
+//   setTimeout(() => {
+//     console.log(`Welcome email sent to: ${email}`)
+//     callback()
+//   }, 1000);
+// }
 
 
 
-function registerUser() {
-  const user = { name:'shahan', email:'shahanverse@gmail.com'}
-  saveUser(user , () => {
-    sendUserEmail(user.email, () => {
-      console.log('REGISTRATION COMPLETED')
-    })
-  })
-}
-registerUser()
+// function registerUser() {
+//   const user = { name:'shahan', email:'shahanverse@gmail.com'}
+//   saveUser(user , () => {
+//     sendUserEmail(user.email, () => {
+//       console.log('REGISTRATION COMPLETED')
+//     })
+//   })
+// }
+// registerUser()
