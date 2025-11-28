@@ -3,8 +3,23 @@
 //                   each takingn one argument at a time
 
 
-function sum(a,b){
-  return a + b 
+// function sum(a,b){
+//   return a + b 
 
-}
-console.log(sum(2,3));
+// }
+// console.log(sum(2,3));
+
+
+// function add(a) {
+//   return function(b){
+//     return a + b 
+//   }
+// }
+// console.log(add(2)(3));
+
+// function mult(a,b){
+//   return function(b){
+//     return a * b
+//   }
+// }
+// console.log(mult(2)(3));
