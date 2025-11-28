@@ -48,20 +48,48 @@
 
 // runTask()
 
-async function fetchData() {
-  try {
-    const response = await fetch("https://jsonplaceholder.typicode.com/users");
-    const data = await response.json();
-    console.log(response);
-    const output = document.getElementById("output");
-      output.innerHTML = data
-        .map((user) => `<p>${user.name} - ${user.email}</p>`)
-        .join("");
-  } catch (error) {
-    console.log(error);
-  }
-}
+// async function fetchData() {
+//   try {
+//     const response = await fetch("https://jsonplaceholder.typicode.com/users");
+//     const data = await response.json();
+//     console.log(response);
+//     const output = document.getElementById("output");
+//       output.innerHTML = data
+//         .map((user) => `<p>${user.name} - ${user.email}</p>`)
+//         .join("");
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
 
-fetchData()
+// fetchData()
+
+
+//JSON = javascript object Notation 
+
+//JSON is a data format uded to store and exchange data between server and client
+// Almost all APIS return data in JSON format.
+
+// {
+//   'name':'Ann',
+//   'age':22,
+//   'role':'admin'
+// }
+
+// JSON.parse() -> convert JSON text -> JS object 
+
+const jsonText = `{"name":"Ann","age":"22"}`;
+
+const obj = JSON.parse(jsonText)
+
+console.log(obj);
+
+// JSON.stringify() -> convert JS object -> JSON text
+
+const student = {name: 'shahan', age:'22'}
+const json = JSON.stringify(student)
+
+console.log(json);
+
 
 
