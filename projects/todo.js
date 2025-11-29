@@ -32,13 +32,19 @@ function displayTodos (list) {
     const li = document.createElement('li')
     li.className = 'list-group-item d-flex justify-content-between align-items-center'
     
-    li.innerHTML =
-     `${todo.text}
+    li.innerHTML = `${todo.text}
      ${
-      todo.status === 'pending'
-      ?  `<span class="badge bg-danger"> pending</span>`
-      :  `<span class="badge bg-success">Done</span>`
-     }`
+       todo.status === "pending"
+         ? `
+            <div>
+              <span class="badge bg-danger me-2">Pending</span>
+              <button class="btn btn-sm btn-secondary" onclick="markDone(${index})">
+                Done
+              </button>
+            </div>
+          `
+         : `<span class="badge bg-success">Done</span>`
+     }`;
      ul.appendChild(li)
   })
 }
