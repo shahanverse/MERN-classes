@@ -9,46 +9,41 @@
 </head>
 <body>
   <div>
-    <h1 class="text-center">Todo dashboard</h1>
+    <h1 class="text-center fw-bold">Todo dashboard</h1>
   </div>
 
-
-  <div class="row text-center ">
-    <div class="col-md-2 ">
-     
-    </div>
-    <div class="col-md-2 ">
-      
-    </div>
-    <div class="col-md-2 ">
-
-    </div>
-    <div class="col-md-2 ">
-    
-    </div>
-
-  </div>
-
-  <div>
+  <div class="">
     
      <div class="grid text-center">
     <div class="g-col-3"></div>
-     <input type="search">
-    <button type="button" class="btn btn-primary">All</button> 
-    <button type="button" class="btn btn-primary">Completed</button>
-    <button type="button" class="btn btn-primary">Pending</button>  
+     <input type="search" placeholder="Search " >
+    <button type="button" class="btn btn-primary btn-sm" onclick="filterTodos('all')">All</button> 
+    <button type="button" class="btn btn-primary btn-sm" onclick="filterTodos('completed')">Completed</button>
+    <button type="button" class="btn btn-primary btn-sm" onclick="filterTodos('pending')">Pending</button>  
       <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
     Sort
   </button>
   <ul class="dropdown-menu dropdown-menu-dark">
     <li><a class="dropdown-item active" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">A-Z</a></li>
+    <li><a class="dropdown-item" onclick="sortAtoZ()" href="#">A-Z</a></li>
     <li><a class="dropdown-item" href="#">Sort</a></lif>
   </ul>
 
     </div>
+     <p class="text-center fw-bold" id="count-text">Total: 0 | Completed: 0 | Pending: 0 </p>
+
+     
   </div>
 
+    <div class="row mb-3 justify-content-center ">
+      <div class="col-md-4 ">
+        <input type="text" id="todo-input" class="form-control" placeholder="New Task">
+      </div>
+      <div class="col-md-2 d-grid ">
+        <button class="btn btn-primary" onclick="addTodo()">add task</button>
+      </div>
+    </div>
+      <ul class="list-group" id="todoList"></ul>
   </div>
 
  
