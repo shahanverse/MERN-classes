@@ -3,7 +3,13 @@ let todos = [
   {text: "complete react project", status: "pending"},
   {text: 'train english fluency', status: "pending"},
   {text: "run 5 miles", status: "done"},
-  {text: 'make 5 million', status: 'pending'}
+  {text: 'make 5 million', status: 'pending'},
+  {text: 'read 20 pages', status: 'pending'},
+  {text: 'cook dinner', status: 'done'},
+  {text: 'call mom', status: 'pending'},
+  {text: 'clean room', status: 'done'},
+  {text: 'pay bills', status: 'pending'},
+
 ];
 
 function addTodo() {
